@@ -206,6 +206,7 @@ const motionGenerator = (distance, size = 20, mode = 'move', version = 7, params
 			}
 		},
 		'input':{
+			caller:params.caller,
 			mode,
 			distance,
 			size,
