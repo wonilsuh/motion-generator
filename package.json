@@ -1,6 +1,6 @@
 {
   "name": "@wonilsuh/motion-generator",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Motion generator function for System 360",
   "main": "dist/index.js",
   "scripts": {
