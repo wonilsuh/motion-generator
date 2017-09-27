@@ -7,7 +7,11 @@ gulp.task("default", function () {
   	.pipe(sourcemaps.init())
     .pipe(babel({
         presets: ['env'],
-        plugins: ['transform-runtime']
+        plugins: [
+        	"transform-runtime",
+        	"transform-es2015-destructuring",
+        	"transform-object-rest-spread"
+        ]
     }))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest("dist"));

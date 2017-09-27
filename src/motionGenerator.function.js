@@ -1,5 +1,3 @@
-import "babel-polyfill";
-
 /*-----------------------------------------------------
  *	generates motion parameters based on the distance (amount og change) of the motion.
  *	@param 		{float}		distance - the distance or amount of change in pixels, or percent in the case of fade.
@@ -40,8 +38,9 @@ import "babel-polyfill";
 							}
 							* passing null for @param:mode will return a slightly different object that contains motion definitions for all three modes.
  */
+import "babel-polyfill";
 const motionGenerator = (distance, size = 20, mode = 'move', version = 7, params = {}) => {
-	// console.log('motionCalc:motionGenerator...', params.sizeFactorAdjuster);
+	// console.log('npm:motionCalc:motionGenerator...', params.sizeFactorAdjuster);
 
 	let ret;
 
@@ -142,17 +141,17 @@ const motionGenerator = (distance, size = 20, mode = 'move', version = 7, params
 			ret.fade.natural.speed = distance / ret.fade.natural.duration *1000;
 			ret.fade.mechanical.speed = distance / ret.fade.mechanical.duration *1000;
 
-			if(
-				mode != null
-				&& MODES.find( entry => entry === mode) != null
-			) ret = {
-				meta:{
-					...ret.meta,
-					mode
-				},
-				input:ret.input,
-				...ret[mode]
-			}
+			// if(
+			// 	mode != null
+			// 	&& MODES.find( entry => entry === mode) != null
+			// ) ret = {
+			// 	meta:{
+			// 		...ret.meta,
+			// 		mode
+			// 	},
+			// 	input:ret.input,
+			// 	...ret[mode]
+			// }
 			break;
 		}
 
@@ -262,21 +261,28 @@ const motionGenerator = (distance, size = 20, mode = 'move', version = 7, params
 			ret.fade.natural.speed = distance / ret.fade.natural.duration *1000;
 			ret.fade.mechanical.speed = distance / ret.fade.mechanical.duration *1000;
 
-			if(
-				mode != null
-				&& MODES.find( entry => entry === mode) != null
-			) ret = {
-				meta:{
-					...ret.meta,
-					mode
-				},
-				input:ret.input,
-				...ret[mode]
-			};
+			// if(
+			// 	mode != null
+			// 	&& MODES.find( entry => entry === mode) != null
+			// ) ret = {
+			// 	meta:{
+			// 		...ret.meta,
+			// 		mode
+			// 	},
+			// 	input:ret.input,
+			// 	...ret[mode]
+			// };
 		}
 	}
 
-	return ret;
+	return {
+		meta:{
+			...ret.meta,
+			mode
+		},
+		input:ret.input,
+		...ret[mode]
+	};
 }
 
 export default motionGenerator;

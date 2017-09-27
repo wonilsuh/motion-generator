@@ -1,13 +1,10 @@
 {
-  "name": "motion-generator",
-  "version": "1.0.0",
+  "name": "@wonilsuh/motion-generator",
+  "version": "1.0.6",
   "description": "Motion generator function for System 360",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "node server.js",
-    "build": "webpack -w --progress",
-    "publish-motion-site": "cf push system-360-motion",
-    "publish-motion-guide": "cf push system-360-motion-guide"
+    "build": "babel src --presets babel-preset-env --out-dir dist"
   },
   "repository": {
     "type": "git",
@@ -30,7 +27,7 @@
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-es2015-destructuring": "^6.23.0",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.6.0",
@@ -39,9 +36,6 @@
     "body-parser": "^1.16.1",
     "dotenv": "^4.0.0",
     "express": "^4.14.1",
-    "file-loader": "^0.11.2",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.0",
-    "gulp-sourcemaps": "^2.6.1"
+    "file-loader": "^0.11.2"
   }
 }

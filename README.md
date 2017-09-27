@@ -1,2 +1,3 @@
 # motion-generator
-Motion generator for System 360 project
+
+This is a motion generator written for System 360 project.
